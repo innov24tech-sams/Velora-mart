@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velora-Mart | Multi-Vendor Marketplace</title>
+<meta name="description" content="Velora-Mart: a modern multi-vendor e-commerce marketplace">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="toast-container"></div>
+
+<header class="site-header">
+  <div class="header-top container">
+    <div class="logo" onclick="go('home')">Velora<span>Mart</span></div>
+    <div class="search-bar">
+      <input id="searchInput" type="text" placeholder="Search products, brands, categories..." oninput="handleSearchInput()">
+      <button onclick="doSearch()">🔍</button>
+      <div id="autocomplete" class="autocomplete"></div>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" onclick="go('wishlist')" title="Wishlist">♥<span id="wishCount" class="badge">0</span></button>
+      <button class="icon-btn" onclick="go('compare')" title="Compare">⇄<span id="cmpCount" class="badge">0</span></button>
+      <button class="icon-btn" onclick="go('cart')" title="Cart">🛒<span id="cartCount" class="badge">0</span></button>
+      <button class="icon-btn" onclick="toggleAccountMenu()" title="Account">👤</button>
+      <div id="accountMenu" class="dropdown hidden">
+        <div id="accInfo" class="acc-info">Guest</div>
+        <a onclick="go('login')">Login / Signup</a>
+        <a onclick="go('profile')">Profile</a>
+        <a onclick="go('orders')">My Orders</a>
+        <a onclick="go('seller-dash')">Seller Dashboard</a>
+        <a onclick="go('admin-dash')">Admin Dashboard</a>
+        <a onclick="logout()">Logout</a>
+      </div>
+    </div>
+  </div>
+  <nav class="mega-menu container" id="megaMenu"></nav>
+</header>
+
+<main id="app" class="container"></main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><h4>Velora-Mart</h4><p>Your premium multi-vendor marketplace. Demo build — all data stored locally in your browser.</p></div>
+    <div><h4>Customer Care</h4><a onclick="go('orders')">Track Order</a><a onclick="go('returns')">Returns</a><a href="#">Help Center</a></div>
+    <div><h4>Sell on Velora</h4><a onclick="go('seller-signup')">Become a Seller</a><a onclick="go('seller-dash')">Seller Dashboard</a></div>
+    <div><h4>Company</h4><a href="#">About</a><a href="#">Careers</a><a href="#">Privacy Policy</a></div>
+  </div>
+  <div class="copyright">© 2024 Velora-Mart. All rights reserved.</div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
